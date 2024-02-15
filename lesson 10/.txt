@@ -1,0 +1,89 @@
+
+Usul .reduce()_
+Usul .reduce()massiv orqali takrorlanadi va bitta qiymatni qaytaradi.
+
+Yuqoridagi kod misolida .reduce()usul massivning barcha elementlarini jamlaydi. (accumulator, currentValue)Argument sifatida ikkita parametr bilan qayta qo'ng'iroq qilish funktsiyasini oladi . Har bir iteratsiyada accumulatoroxirgi iteratsiya tomonidan qaytarilgan qiymat va currentValuejoriy element hisoblanadi. Ixtiyoriy ravishda, akkumulyatorning boshlang'ich qiymati sifatida ishlaydigan ikkinchi argumentni o'tkazish mumkin.
+
+const arrayOfNumbers = [ 1 , 2 , 3 , 4 ] ;    
+
+const sum = arrayOfNumbers . kamaytirish ( ( akkumulyator , joriyValue ) => {    
+  qaytaruvchi akkumulyator + joriyValue ;
+} ) ;
+
+konsol . log ( sum ) ; // 10 
+Usul .forEach()_
+Usul .forEach()massivdagi elementlarning har birida tartibda qayta qo'ng'iroq qilish funksiyasini bajaradi.
+
+Yuqoridagi misol kodida usulni o'z ichiga olgan qayta qo'ng'iroq qilish funktsiyasi har bir element uchun bir marta console.log()bajariladi .5
+
+const raqamlari = [ 28 , 77 , 45 , 99 , 27 ] ;     
+
+raqamlar . forEach ( raqam => {    
+  konsol . jurnal ( raqam ) ;
+} ) ; 
+Usul .filter()_
+Usul .filter()massivdagi har bir elementda qayta qo'ng'iroq qilish funksiyasini bajaradi. Har bir element uchun qayta qo'ng'iroq qilish funktsiyasi trueyoki ni qaytarishi kerak false. Qaytarilgan massiv, qayta qo'ng'iroq qilish funktsiyasi qaytariladigan har qanday elementlarga ega yangi massivdir true.
+
+Yuqoridagi kod misolida massiv lekin filteredArrayning barcha elementlarini o'z ichiga oladi .randomNumbers4
+
+const randomNumbers = [ 4 , 11 , 42 , 14 , 39 ] ;     
+const filteredArray = randomNumbers . filtr ( n => {    
+  qaytish n > 5 ; 
+} ) ;
+Usul .map()_
+Usul .map()massivdagi har bir elementda qayta qo'ng'iroq qilish funksiyasini bajaradi. U qayta qo'ng'iroq qilish funktsiyasidan qaytish qiymatlaridan tashkil topgan yangi massivni qaytaradi.
+
+Asl massiv o'zgarmaydi va qaytarilgan massiv asl massivdan boshqa elementlarni o'z ichiga olishi mumkin.
+
+Yuqoridagi misol kodida, usul massivdagi har bir elementning oxiriga satr .map()qo'shish uchun ishlatiladi .' joined the contest.'finalParticipants
+
+const finalParticipants = [ 'Teylor' , 'Donald' , 'Don' , 'Natasha' , 'Bobbi' ] ;     
+
+// har bir yakuniy ishtirokchidan keyin qator qo'shing
+const announcements = finalParticipants . xarita ( a'zo => {  
+  qaytish a'zosi + ' tanlovga qo'shildi.' ; 
+} )
+
+konsol . jurnal ( e'lonlar ) ;
+O'zgaruvchilarga tayinlangan funksiyalar
+JavaScript-da, satrlar, raqamlar va massivlar ma'lumotlar turlari bo'lgani kabi, funktsiyalar ham ma'lumotlar turidir. Shuning uchun funksiyalar o‘zgaruvchilarga qiymat sifatida berilishi mumkin, lekin boshqa barcha ma’lumotlar turlaridan farq qiladi, chunki ularni chaqirish mumkin.
+
+let plusFive = ( raqam ) => {     
+  qaytish raqami + 5 ;   
+} ;
+// f ga plusFive qiymati tayinlangan
+f = plusFive qilsin ;
+
+plusFive ( 3 ) ; // 8 
+// f funktsiya qiymatiga ega bo'lgani uchun uni chaqirish mumkin.
+f ( 9 ) ; // 14 
+
+Qayta qo'ng'iroq qilish funktsiyalari
+JavaScript-da qayta qo'ng'iroq qilish funktsiyasi boshqa funktsiyaga argument sifatida uzatiladigan funktsiyadir. Keyinchalik bu funktsiya yuqori tartibli funktsiyani bajarish paytida chaqirilishi mumkin (bu argumentdir).
+
+JavaScript-da funksiyalar ob'ektlar bo'lganligi sababli, funktsiyalar argument sifatida uzatilishi mumkin.
+
+const isEven = ( n ) => {     
+  qaytish n % 2 == 0 ;   
+}
+
+let printMsg = ( evenFunc , num ) => {     
+  const isNumEven = evenFunc ( son ) ; 
+  konsol . log ( ` $ { num } soni juft son: ${ isNumEven } .` )
+}
+
+// isEven-ga qayta qo'ng'iroq qilish funktsiyasi sifatida o'ting
+printMsg ( isEven , 4 ) ;  
+// Chop etish: 4 raqami juft son: Rost.
+Yuqori darajali funktsiyalar
+Javascriptda funksiyalar o'zgaruvchilarga xuddi satrlar yoki massivlar kabi tayinlanishi mumkin. Ular parametr sifatida boshqa funktsiyalarga o'tkazilishi yoki ulardan qaytarilishi mumkin.
+
+“Yuqori tartibli funksiya” funksiyalarni parametr sifatida qabul qiluvchi va/yoki funksiyani qaytaruvchi funksiyadir.
+
+JavaScript funktsiyalari: Birinchi darajali ob'ektlar
+JavaScript funktsiyalari birinchi darajali ob'ektlardir. Shuning uchun:
+
+nameUlarda xususiyat va usul kabi o'rnatilgan xususiyatlar va usullar mavjud .toString().
+Ularga xususiyatlar va usullar qo'shilishi mumkin.
+Ular argument sifatida uzatilishi va boshqa funktsiyalardan qaytarilishi mumkin.
+Ular o'zgaruvchilarga, massiv elementlariga va boshqa ob'ektlarga tayinlanishi mumkin.
